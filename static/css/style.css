@@ -115,3 +115,45 @@ body
         opacity: 0;
     }
 }
+
+.col_name{
+    font-size: 30px;
+}
+
+@media screen and (max-width: 480px) {
+    .col_name{
+        font-size: 15px;
+    }
+    label{
+        font-size: 10px;
+    }
+    .tex_F
+    {
+        font-size: 12px;
+    }
+    .top_bar
+    {
+        font-size: 12px;
+    }
+  }
+@media screen and (max-width: 350px) {
+    .col_name{
+        font-size: 10px;
+    }
+    label{
+        font-size: 10px;
+    }
+    .tex_F
+    {
+        font-size: 7px;
+    }
+    .icon_position{
+        position: relative;
+        top: 1px;
+        color: rgb(255, 53, 53);
+    }
+    .top_bar
+    {
+        font-size: 10px;
+    }
+  }

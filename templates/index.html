@@ -21,7 +21,7 @@
         </div>
         <div id="box-area">
         <header>
-          <div class="d-flex justify-content-end container">
+          <div class="d-flex justify-content-end container top_bar">
             <ion-icon name="call" class="icon_position"></ion-icon> +92 324 4064060&nbsp;&nbsp;
             <ion-icon name="mail" class="icon_position"></ion-icon> Azeemaj101@gmail.com
           </div>
@@ -63,7 +63,7 @@
         <section class="section_div fw-bold fs-2 d-flex justify-content-center align-items-center">
           Heart Disease Prediction
         </section>
-        <div class=" fw-bold text-dark fs-3 d-flex justify-content-center align-items-center">
+        <div class=" fw-bold text-dark col_name d-flex justify-content-center align-items-center">
           Column Names:&nbsp;&nbsp;<span class="box text-danger"></span>
         </div>
         <main class="container">
@@ -161,7 +161,7 @@
         </div>
         <div class="fs-4 fw-bold text-center mt-2 pt-2" id="result">
         </div>
-        <footer class="mt-4 text-light fw-bold p-2 fs-6" style="background-color: black;">
+        <footer class="mt-4 text-light fw-bold p-2 tex_F" style="background-color: black;">
           <div class="container">
             <span>
               ©️ Copyright 2022
@@ -182,7 +182,7 @@
         <script>
           var typed = new Typed('.box', {
           strings: ['Age', 'Sex', 'Chest pain type (4 values)', 'Resting blood pressure',
-        "Serum cholestoral in mg/dl","Fasting blood sugar > 120 mg/dl","Resting electrocardiographic results (values 0,1,2)","Maximum heart rate achieved","Exercise induced angina","Oldpeak","The slope of the peak exercise ST segment","Number of major vessels (0-3)","Thal: 0 = normal; 1 = fixed defect; 2 = reversable defect"],
+        "Serum cholestoral in mg/dl","Fasting blood sugar > 120 mg/dl","Resting electrocardiographic results (values 0,1,2)","Maximum heart rate achieved","Exercise induced angina","Oldpeak","The slope of the peak exercise ST segment","Number of major vessels (0-3)","Thal"],
           typeSpeed: 40,
           backspaceSpeed: 20,
           backspaceDelay: 80,
@@ -247,7 +247,7 @@
             }
             setTimeout(function(){
             $('.loader_bg').fadeToggle();
-            }, 3000);
+            }, 1000);
         </script>
     </body>
 </html>
