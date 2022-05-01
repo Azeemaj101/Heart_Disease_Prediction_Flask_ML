@@ -1,0 +1,117 @@
+*{
+    padding: 0%;
+    margin: 0%;
+}
+
+body
+{
+    background-color: #ccc;
+}
+
+::-webkit-scrollbar {
+    width: 2px;
+  }
+  
+  /* Track */
+  ::-webkit-scrollbar-track {
+    background: #f1f1f1; 
+  }
+   
+  /* Handle */
+  ::-webkit-scrollbar-thumb {
+    background: #888; 
+  }
+  
+  /* Handle on hover */
+  ::-webkit-scrollbar-thumb:hover {
+    background: #555; 
+  }
+
+.icon_position{
+    position: relative;
+    top: 5px;
+    color: rgb(255, 53, 53);
+}
+
+.section_div
+{
+    background-image: url("../picture/2.gif"); /* The image used */
+    background-color: #cccccc; /* Used if the image is unavailable */
+    height: 250px; /* You must set a specified height */
+    background-position: center; /* Center the image */
+    background-repeat: no-repeat; /* Do not repeat the image */
+    background-size: cover;
+    text-shadow: 2px 2px 15px rgb(255, 3, 3);
+    color: #ccc;
+}
+
+.result_shadow_danger{
+    text-shadow: 2px 2px 15px rgb(255, 3, 3);
+}
+.result_shadow_success{
+    text-shadow: 2px 2px 15px rgb(3, 255, 24);
+}
+
+.x_deg{
+    transform: skewX(10deg);
+}
+
+.x2_deg{
+    transform: skewX(-10deg);
+}
+
+.icon{
+    position: relative;
+    top: 4px;
+    color:white;
+}
+.icon:hover{
+    position: relative;
+    top: 1px;
+    color:rgb(255, 43, 43);
+}
+
+.loader_bg{
+    position: fixed;
+    z-index: 999999;
+    background: #fff;
+    width: 100%;
+    height: 100%;
+}
+.loader{
+    border: 0 soild transparent;
+    border-radius: 50%;
+    width: 150px;
+    height: 150px;
+    position: absolute;
+    top: calc(50vh - 75px);
+    left: calc(50vw - 75px);
+}
+.loader:before, .loader:after{
+    content: '';
+    border: 1em solid #ff5733;
+    border-radius: 50%;
+    width: inherit;
+    height: inherit;
+    position: absolute;
+    top: 0;
+    left: 0;
+    animation: loader 2s linear infinite;
+    opacity: 0;
+}
+.loader:before{
+    animation-delay: .5s;
+}
+@keyframes loader{
+    0%{
+        transform: scale(0);
+        opacity: 0;
+    }
+    50%{
+        opacity: 1;
+    }
+    100%{
+        transform: scale(1);
+        opacity: 0;
+    }
+}

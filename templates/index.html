@@ -1,0 +1,278 @@
+<!doctype html>
+<html lang="en">
+    <head>
+        <title>Heart Disease</title>
+        <!-- Required meta tags -->
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+        <!-- Bootstrap CSS v5.0.2 -->
+        <link
+            rel="stylesheet"
+            href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css"
+            integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC"
+            crossorigin="anonymous"
+        >
+        <link rel="stylesheet" href="{{ url_for('static', filename='./css/style.css') }}">
+    </head>
+    <body>
+        <div class="loader_bg">
+          <div class="loader"></div>
+        </div>
+        <div id="box-area">
+        <header>
+          <div class="d-flex justify-content-end container">
+            <ion-icon name="call" class="icon_position"></ion-icon> +92 324 4064060&nbsp;&nbsp;
+            <ion-icon name="mail" class="icon_position"></ion-icon> Azeemaj101@gmail.com
+          </div>
+            <nav class="navbar navbar-expand-lg navbar-dark" style="background-color: black;">
+                <div class="container">
+                    <button
+                        class="navbar-toggler"
+                        type="button"
+                        data-bs-toggle="collapse"
+                        data-bs-target="#navbarSupportedContent"
+                        aria-controls="navbarSupportedContent"
+                        aria-expanded="false"
+                        aria-label="Toggle navigation"
+                    >
+                        <span class="navbar-toggler-icon"></span>
+                    </button>
+                    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                        <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                            <li class="nav-item">
+                                <a class="nav-link active" aria-current="page" href="#">Home</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="#">Dataset</a>
+                            </li>
+                            <li class="nav-item dropdown">
+                                <a
+                                    class="nav-link dropdown-toggle"
+                                    href="#"
+                                    id="navbarDropdown"
+                                    role="button"
+                                    data-bs-toggle="dropdown"
+                                    aria-expanded="false"
+                                >
+                                    Dropdown
+                                </a>
+                                <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                                    <li>
+                                        <a class="dropdown-item" href="#">Action</a>
+                                    </li>
+                                    <li>
+                                        <a class="dropdown-item" href="#">Another action</a>
+                                    </li>
+                                    <li>
+                                        <hr class="dropdown-divider">
+                                    </li>
+                                    <li>
+                                        <a class="dropdown-item" href="#">Something else here</a>
+                                    </li>
+                                </ul>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link">NoteBook</a>
+                            </li>
+                        </ul>
+                            <a href="https://github.com/Azeemaj101" target="_blank" rel="noopener noreferrer">
+                              <button class="btn btn-outline-danger x_deg btn-sm me-2" type="submit">Github</button>
+                            </a>
+                            <a href="http://azeemaj101.herokuapp.com/" target="_blank" rel="noopener noreferrer">
+                              <button class="btn btn-outline-danger  x2_deg btn-sm me-2" type="submit">Portfolio</button>
+                            </a>
+                    </div>
+                </div>
+            </nav>
+        </header>
+        <section class="section_div fw-bold fs-2 d-flex justify-content-center align-items-center">
+          Heart Disease Prediction
+        </section>
+        <div class=" fw-bold text-dark fs-3 d-flex justify-content-center align-items-center">
+          Column Names:&nbsp;&nbsp;<span class="box text-danger"></span>
+        </div>
+        <main class="container">
+          <form method="post" id="postform" autocomplete="off">
+            <div class="mb-3">
+              <div class="row">
+              <div class="col">
+                <label class="form-label fw-bold">Age</label>
+                <input type="number" class="form-control" name="age" required id="age" max="100" min="1" placeholder="Age (1-100)">
+              </div>
+              <div class="col">
+                <label class="form-label fw-bold">Sex</label>
+                <input type="number" class="form-control" name="sex" required id="sex" max="1" min="0" placeholder="Sex (0=Male or 1=Female)">
+              </div>
+              </div>
+            </div>
+            <div class="mb-3">
+              <div class="row">
+              <div class="col">
+                <label class="form-label fw-bold">Chest Pain</label>
+                <input type="number" class="form-control" name="cp" required id="cp" max="2" min="0" placeholder="Chest Pain (0=ATA, 1=NAP, 2=ASY)">
+              </div>
+              <div class="col">
+                <label class="form-label fw-bold">Resting Blood Pressure</label>
+                <input type="number" class="form-control" name="bp" required id="bp" max="200" min="90" placeholder="Resting blood pressure (90 to 200)">
+              </div>
+              </div>
+            </div>
+            <div class="mb-3">
+              <div class="row">
+              <div class="col">
+                <label class="form-label fw-bold">Serum cholestoral</label>
+                <input type="number" class="form-control" name="chol" required id="chol" max="500" min="100" placeholder="Serum cholestoral in mg/dl (100 to 500)">
+              </div>
+              <div class="col">
+                <label class="form-label fw-bold">Fasting blood sugar</label>
+                <input type="number" class="form-control" name="fbs" required id="fbs" max="1" min="0" placeholder="Fasting blood sugar > 120 mg/dl (0 = No | 1 = Yes)">
+              </div>
+              </div>
+            </div>
+            <div class="mb-3">
+              <div class="row">
+              <div class="col">
+                <label class="form-label fw-bold">Resting Electrocardiographic</label>
+                <input type="number" class="form-control" name="restecg" required id="restecg" max="2" min="0" placeholder="Resting electrocardiographic results (values 0=Normal,1=ST,2=LVH)">
+              </div>
+              <div class="col">
+                <label class="form-label fw-bold">Heart rate</label>
+                <input type="number" class="form-control" name="thalach" required id="thalach" max="200" min="70" placeholder="Maximum heart rate achieved (70 to 200)">
+              </div>
+              </div>
+            </div>
+            <div class="mb-3">
+              <div class="row">
+              <div class="col">
+                <label class="form-label fw-bold">Exercise induced angina</label>
+                <input type="number" class="form-control" name="exang" required id="exang" max="1" min="0" placeholder="Exercise induced angina (values 0=No,1=Yes)">
+              </div>
+              <div class="col">
+                <label class="form-label fw-bold">Oldpeak</label>
+                <input type="number" class="form-control" name="oldpeak" required id="oldpeak" max="10" min="0" placeholder="Oldpeak (0 to 10)">
+              </div>
+              </div>
+            </div>
+            <div class="mb-3">
+              <div class="row">
+              <div class="col">
+                <label class="form-label fw-bold">Slope</label>
+                <input type="number" class="form-control" name="slope" required id="slope" max="2" min="0" placeholder="The slope of the peak exercise ST segment (0=Up, 1=Flat, 2=Down)">
+              </div>
+              <div class="col">
+                <label class="form-label fw-bold">Number of Major Vessels</label>
+                <input type="number" class="form-control" name="ca" required id="ca" max="10" min="0" placeholder="Number of major vessels (0-3)">
+              </div>
+              </div>
+            </div>
+            <div class="mb-3">
+              <div class="row">
+              <div class="col">
+                <label class="form-label fw-bold">Thal</label>
+                <input type="number" class="form-control" name="thal" required id="thal" max="2" min="0" placeholder="Thal: 0 = normal; 1 = fixed defect; 2 = reversable defect">
+              </div>
+              </div>
+            </div>
+            <button type="submit" class="btn btn-outline-danger container fw-bold">SUBMIT DATA</button>
+          </form>
+
+        </main>
+        <hr>
+        <div class="fs-3 mt-3 text-decoration-underline text-center fw-bold" id="result_title">
+          PREDICTION RESULTS
+        </div>
+        <div class="text-center p-2" id="loading">
+          <img src="https://raw.githubusercontent.com/Codelessly/FlutterLoadingGIFs/master/packages/cupertino_activity_indicator.gif" alt="" srcset="" style="width: 100px; height: 100px;">
+        </div>
+        <div class="fs-4 fw-bold text-center mt-2 pt-2" id="result">
+        </div>
+        <footer class="mt-4 text-light fw-bold p-2 fs-6" style="background-color: black;">
+          <div class="container">
+            <span>
+              ©️ Copyright 2022
+            </span>  
+            <span class="float-end">
+              Designed By: Muhammad Azeem <a href="https://github.com/Azeemaj101" target="_blank" rel="noopener noreferrer"><ion-icon name="logo-github" class="icon"></ion-icon></a>
+            </span>
+          </div>
+        </footer>
+      </div>
+        <!-- Bootstrap JavaScript Libraries -->
+        <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js" integrity="sha384-IQsoLXl5PILFhosVNubq5LC7Qb9DXgDA9i+tQ8Zj3iwWAwPtgFTxbJ8NT4GN1R8p" crossorigin="anonymous"></script>
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.min.js" integrity="sha384-cVKIPhGWiC2Al4u+LWgxfKTRIcfu0JTxR+EQDz/bgldoEyl4H0zUF0QKbrJ0EcQF" crossorigin="anonymous"></script>
+        <script src="https://unpkg.com/ionicons@4.5.10-0/dist/ionicons.js"></script>
+
+        <script src = {{ url_for('static', filename='JS/type.js') }}></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js" integrity="sha512-894YE6QWD5I59HgZOGReFYm4dnWc1Qt5NtvYSaNcOP+u1T9qYdvdihz0PPSiiqn/+/3e7Jo4EaG7TubfWGUrMQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+        <script>
+          var typed = new Typed('.box', {
+          strings: ['Age', 'Sex', 'Chest pain type (4 values)', 'Resting blood pressure',
+        "Serum cholestoral in mg/dl","Fasting blood sugar > 120 mg/dl","Resting electrocardiographic results (values 0,1,2)","Maximum heart rate achieved","Exercise induced angina","Oldpeak","The slope of the peak exercise ST segment","Number of major vessels (0-3)","Thal: 0 = normal; 1 = fixed defect; 2 = reversable defect"],
+          typeSpeed: 40,
+          backspaceSpeed: 20,
+          backspaceDelay: 80,
+          repeatDelay: 10,
+          repeat: true,
+          autoStart: true,
+          startDelay: 10,
+          loop: true,
+        });
+        function display()
+        {
+          loading.style.display = "none";
+          result_div.style.display = "block";
+        }
+        document.getElementById("result").style.display = "none";
+        document.getElementById("loading").style.display = "none";
+        document.getElementById("result_title").style.display = "none";
+        document.getElementById('postform').addEventListener('submit', getData);
+        function getData(e){
+                e.preventDefault();
+                age = document.getElementById("age").value;
+                sex = document.getElementById("sex").value;
+                cp = document.getElementById("cp").value;//0-3
+                bp = document.getElementById("bp").value;//90-200
+                chol = document.getElementById("chol").value;//100-500
+                fbs = document.getElementById("fbs").value;//0-1
+                restecg = document.getElementById("restecg").value;//0-2
+                thalach = document.getElementById("thalach").value;//70-200
+                exang = document.getElementById("exang").value;//0-1
+                oldpeak = document.getElementById("oldpeak").value;//0-10
+                slope = document.getElementById("slope").value;//0-2
+                ca = document.getElementById("ca").value;//0-3
+                thal = document.getElementById("thal").value;//0-2
+                var params = {Age:age, Sex:sex, Cp:cp, Bp:bp, Chol:chol, Fbs:fbs, Restecg:restecg, Thalach:thalach, Exang:exang, Oldpeak:oldpeak, Slope:slope, Ca:ca, Thal:thal};
+                var xhr = new XMLHttpRequest();
+                xhr.open('post', '../reply', true)
+                xhr.setRequestHeader('Content-type', 'application/json');
+                xhr.onload = function(){
+                  result = Number(this.responseText);
+                  result_div = document.getElementById("result");
+                  loading = document.getElementById("loading");
+                  result_title = document.getElementById("result_title");
+                  result_div.style.display = "none";
+                  loading.style.display = "block";
+                  result_title.style.display = "block";
+                  window.scrollBy(0,170);
+                  setTimeout(display, 3000);
+                  if(result == 1)
+                  {
+                    result_div.classList.remove("result_shadow_success");
+                    result_div.innerText = "Bad News! Your test is Positive [1], You face some Heart Disease";
+                    result_div.classList.add("result_shadow_danger");
+                  }
+                  else
+                  {
+                    result_div.classList.remove("result_shadow_danger");
+                    result_div.innerText = "Good News! Your test is Negative [0], You don't face any Heart Disease";
+                    result_div.classList.add("result_shadow_success");
+                  }
+                }
+                xhr.send(JSON.stringify(params));
+            }
+            setTimeout(function(){
+            $('.loader_bg').fadeToggle();
+            }, 3000);
+        </script>
+    </body>
+</html>
